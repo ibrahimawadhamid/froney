@@ -14,6 +14,8 @@ import {
     Row
 } from 'reactstrap';
 
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+
 class Register extends Component {
     render() {
         return (
@@ -63,10 +65,21 @@ class Register extends Component {
                                 <CardFooter className="p-4">
                                     <Row>
                                         <Col xs="12" sm="6">
-                                            <Button className="btn-facebook mb-1" block><span>facebook</span></Button>
+                                            <FacebookLogin
+                                                appId="200052240934024"
+                                                autoLoad={false}
+                                                fields="name,email,picture"
+                                                textButton="facebook"
+                                                callback={this.responseFacebook}
+                                                render={renderProps => (
+                                                    <Button className="btn-facebook mb-1" block
+                                                            onClick={renderProps.onClick}>facebook</Button>
+                                                )}
+                                            />
                                         </Col>
                                         <Col xs="12" sm="6">
-                                            <Button className="btn-twitter mb-1" block><span>twitter</span></Button>
+                                            <Button disabled className="btn-twitter mb-1"
+                                                    block><span>twitter</span></Button>
                                         </Col>
                                     </Row>
                                 </CardFooter>

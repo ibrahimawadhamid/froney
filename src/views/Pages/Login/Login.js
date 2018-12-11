@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
 class Login extends Component {
-    responseFacebook = (response) => {
-        console.log(response);
+    responseFacebook(response) {
+        console.log(response)
     }
+
     render() {
         return (
             <div className="app flex-row align-items-center">
@@ -47,10 +48,19 @@ class Login extends Component {
                                 <CardFooter className="p-4">
                                     <Row>
                                         <Col xs="12" sm="6">
-                                            <Button className="btn-facebook mb-1" block><span>facebook</span></Button>
+                                            <FacebookLogin
+                                                appId="200052240934024"
+                                                autoLoad={false}
+                                                fields="name,email,picture"
+                                                textButton="facebook"
+                                                callback={this.responseFacebook}
+                                                render={renderProps => (
+                                                    <Button className="btn-facebook mb-1" block onClick={renderProps.onClick}>facebook</Button>
+                                                )}
+                                            />
                                         </Col>
                                         <Col xs="12" sm="6">
-                                            <Button className="btn-twitter mb-1" block><span>twitter</span></Button>
+                                            <Button disabled className="btn-twitter mb-1" block><span>twitter</span></Button>
                                         </Col>
                                     </Row>
                                 </CardFooter>
