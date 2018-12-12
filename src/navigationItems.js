@@ -10,6 +10,15 @@ export default {
             },
         },
         {
+            name: 'Events',
+            url: '/events',
+            icon: 'icon-graph',
+            badge: {
+                variant: 'info',
+                text: 'Timeline',
+            },
+        },
+        {
             name: 'About',
             url: '/about',
             icon: 'icon-info',
