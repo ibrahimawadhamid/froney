@@ -3,9 +3,14 @@ import { AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/re
 import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from 'reactstrap';
 import logo from '../../assets/img/brand/froney_logo.png';
 import sygnet from '../../assets/img/brand/sygnet.svg';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 class DefaultHeader extends Component {
+
+    signoutHandler = () => {
+        this.props.history.push('/login')
+    }
+
     render () {
         return(
             <React.Fragment>
@@ -31,7 +36,7 @@ class DefaultHeader extends Component {
                             <DropdownItem><i className="fa fa-user"></i><Link to="/profile"> Profile</Link></DropdownItem>
                             <DropdownItem><i className="fa fa-usd"></i> Payments<Badge color="secondary">42</Badge></DropdownItem>
                             <DropdownItem divider />
-                            <DropdownItem><i className="fa fa-lock"></i> Logout</DropdownItem>
+                            <DropdownItem onClick={this.signoutHandler}><i className="fa fa-lock"></i> Logout</DropdownItem>
                         </DropdownMenu>
                     </AppHeaderDropdown>
                 </Nav>
@@ -40,4 +45,4 @@ class DefaultHeader extends Component {
     }
 }
 
-export default DefaultHeader;
+export default withRouter(DefaultHeader);

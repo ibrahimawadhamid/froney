@@ -6,7 +6,7 @@ import { Container } from 'reactstrap';
 
 import navigationItems from '../../navigationItems';
 import routes from '../../routes';
-import {Redirect, Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import LoadingSpinner from '../../components/UI/LoadingSpinner/LoadingSpinner';
 
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
@@ -66,4 +66,4 @@ class DefaultLayout extends Component {
     }
 }
 
-export default DefaultLayout;
+export default withRouter(DefaultLayout);
