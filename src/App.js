@@ -2,22 +2,21 @@ import React, {Component} from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import './App.scss';
-
-const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+import LoadingSpinner from './components/UI/LoadingSpinner/LoadingSpinner';
 
 // Containers
 const DefaultLayout = Loadable({
     loader: () => import('./containers/DefaultLayout'),
-    loading
+    loading: LoadingSpinner
 });
 // Pages
 const Login = Loadable({
     loader: () => import('./views/Pages/Login/Login'),
-    loading
+    loading: LoadingSpinner
 });
 const Register = Loadable({
     loader: () => import('./views/Pages/Register/Register'),
-    loading
+    loading: LoadingSpinner
 });
 
 class App extends Component {

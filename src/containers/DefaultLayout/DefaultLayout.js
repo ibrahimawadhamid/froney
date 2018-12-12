@@ -7,19 +7,19 @@ import { Container } from 'reactstrap';
 import navigationItems from '../../navigationItems';
 import routes from '../../routes';
 import {Redirect, Route, Switch} from "react-router-dom";
+import LoadingSpinner from '../../components/UI/LoadingSpinner/LoadingSpinner';
 
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 
 
-class DefaultLayout extends Component {
-    loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
+class DefaultLayout extends Component {
     render () {
         return (
             <div className="app">
                 <AppHeader fixed>
-                    <Suspense fallback={this.loading()}>
+                    <Suspense fallback={<LoadingSpinner/>}>
                         <DefaultHeader/>
                     </Suspense>
                 </AppHeader>
@@ -36,7 +36,7 @@ class DefaultLayout extends Component {
                     <main className="main">
                         <AppBreadcrumb appRoutes={routes}/>
                         <Container fluid>
-                            <Suspense fallback={this.loading()}>
+                            <Suspense fallback={<LoadingSpinner/>}>
                                 <Switch>
                                     {routes.map((route, idx) => {
                                         return route.component ? (
@@ -57,7 +57,7 @@ class DefaultLayout extends Component {
                     </main>
                 </div>
                 <AppFooter>
-                    <Suspense fallback={this.loading()}>
+                    <Suspense fallback={<LoadingSpinner/>}>
                         <DefaultFooter />
                     </Suspense>
                 </AppFooter>
