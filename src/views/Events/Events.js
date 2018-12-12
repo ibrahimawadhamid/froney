@@ -18,7 +18,7 @@ class Events extends Component {
                                 corporis dignissimos porro.</p>
                         </div>
                         <div className="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                            <img src="img/img13.png" className="img-fluid" alt="img"/>
+                            <img src="../../assets/img/avatars/awad.jpg" className="img-fluid rounded-circle" alt="img"/>
                         </div>
                         <div className="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                             <time>2018-02-23</time>

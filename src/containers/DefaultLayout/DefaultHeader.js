@@ -3,6 +3,7 @@ import { AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/re
 import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from 'reactstrap';
 import logo from '../../assets/img/brand/froney_logo.png';
 import sygnet from '../../assets/img/brand/sygnet.svg';
+import {Link} from "react-router-dom";
 
 class DefaultHeader extends Component {
     render () {
@@ -27,7 +28,7 @@ class DefaultHeader extends Component {
                             <DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
                             <DropdownItem><i className="fa fa-envelope-o"></i> Messages<Badge color="success">42</Badge></DropdownItem>
                             <DropdownItem header tag="div" className="text-center"><strong>Settings</strong></DropdownItem>
-                            <DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem>
+                            <DropdownItem><i className="fa fa-user"></i><Link to="/profile"> Profile</Link></DropdownItem>
                             <DropdownItem><i className="fa fa-usd"></i> Payments<Badge color="secondary">42</Badge></DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem><i className="fa fa-lock"></i> Logout</DropdownItem>
