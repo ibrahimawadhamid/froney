@@ -18,6 +18,15 @@ export default {
 				text: "Timeline",
 			},
 		},
+        {
+            name: "Friends",
+            url: "/friends",
+            icon: "icon-people",
+            badge: {
+                variant: "info",
+                text: "102",
+            },
+        },
 		{
 			name: "About",
 			url: "/about",
