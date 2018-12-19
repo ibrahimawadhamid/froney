@@ -1,11 +1,11 @@
-import React from 'react';
-import './LoadingSpinner.css';
+import React from "react";
+import "./LoadingSpinner.css";
 
 const loadingSpinner = () => (
-    <div className="lds-ripple">
-        <div></div>
-        <div></div>
-    </div>
+	<div className="lds-ripple">
+		<div></div>
+		<div></div>
+	</div>
 );
 
 export default loadingSpinner;
