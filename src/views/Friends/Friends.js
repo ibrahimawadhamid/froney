@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import "./Friends.css";
+import {FaPlus} from 'react-icons/fa';
+import {Button} from "reactstrap";
 
 class Friends extends Component {
     render() {
@@ -9,7 +11,11 @@ class Friends extends Component {
                     <div className="col-md-12 col-lg-6">
                         <div className="card">
                             <div className="header">
-                                <h2><strong>New</strong> Friends <small>Add new friend in last month</small></h2>
+                                <h2><strong>Facebook</strong> Friends
+                                    <Button outline color="primary" className="float-right">
+                                        <i className="fa fa-plus"></i>&nbsp;Add
+                                    </Button>
+                                </h2>
                             </div>
                             <div className="body">
                                 <ul className="new_friend_list list-unstyled row">
@@ -68,7 +74,11 @@ class Friends extends Component {
                     <div className="col-md-12 col-lg-6">
                         <div className="card">
                             <div className="header">
-                                <h2><strong>New</strong> Friends <small>Add new friend in last month</small></h2>
+                                <h2><strong>Local</strong> Friends
+                                    <Button outline color="primary" className="float-right">
+                                        <i className="fa fa-plus"></i>&nbsp;Add
+                                    </Button>
+                                </h2>
                             </div>
                             <div className="body">
                                 <ul className="new_friend_list list-unstyled row">
