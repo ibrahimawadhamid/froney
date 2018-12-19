@@ -7,7 +7,6 @@ import {
     InputGroupAddon, InputGroupText,
     Modal,
     ModalBody,
-    ModalFooter,
     ModalHeader
 } from "reactstrap";
 
@@ -53,8 +52,16 @@ class LocalFriends extends Component {
                                     <Input type="email" id="email1" name="email" placeholder="Email"/>
                                 </InputGroup>
                             </FormGroup>
+                            <FormGroup>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText><i className="fa fa-photo"></i></InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input type="file" id="photo" name="photo" placeholder="Photo"/>
+                                </InputGroup>
+                            </FormGroup>
                             <FormGroup className="form-actions">
-                                <Button type="submit" size="sm" color="primary">Add</Button>
+                                <Button type="submit" size="sm" color="primary" onClick={(e) => {e.preventDefault();}}>Add</Button>
                                 <Button color="warning" size="sm" onClick={this.addFriendHandler}>Cancel</Button>
                             </FormGroup>
                         </Form>
