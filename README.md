@@ -6,7 +6,7 @@ Open your browser http://localhost
 
 # Online [Demo](https://cartologic.github.io/react-geo-dashboard/)
 # Development - [Github](https://github.com/cartologic/react-geo-dashboard)
-## Available Scriptsaaaaa
+## Available Scripts
 
 In the project directory, you can run:
 
